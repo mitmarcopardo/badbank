@@ -2,7 +2,7 @@ function Home(){
     return(
         <Card
             bgcolor="primary"
-            txtcolor = "black"
+            txtcolor = ""
             header = "BadBank Landing Page"
             title = "Welcome to BadBank"
             text = "You can use this bank"
