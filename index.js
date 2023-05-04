@@ -4,8 +4,8 @@ function Spa(){
         <HashRouter>
             <Navbar/>
             <UserContext.Provider value={
-                {users:[{name:'marco', email:'mpardo@gmail.com', 
-                password:'elsecreto', balance:'100'}]}
+                {value: false,
+                users:[]}
             }>
                 <Route path="/" exact component={Home} />
                 <Route path="/caccaount/" component={CreateAccount} />
