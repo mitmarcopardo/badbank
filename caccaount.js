@@ -8,11 +8,21 @@ function CreateAccount(){
 
     function validate(field, label){
         if (!field){
-            setStatus('Error: ' + label);
+            setStatus('Error: field ' + label + 'is empty');
             setTimeout( () => setStatus(''),3000);
             return false;
         }
         return true;
+    }
+
+    function validateUser(){
+        if (ctx.users.some( (user) => user.email === email ) === true){
+            setStatus('Error: email is already in use');
+            setTimeout( () => setStatus(''),3000);
+            return false;
+        }else{
+            return handleCreate();
+        }
     }
 
     function clearForm(){
@@ -27,7 +37,7 @@ function CreateAccount(){
         if (!validate(name,         'name'))        return;
         if (!validate(email,        'email'))       return;
         if (!validate(password,     'password'))    return;
-        ctx.users.push({name, email, password, balance:100});
+        ctx.users.push({name, email, password, balance:0});
         setShow(false);
         ctx.value = true;
     }
@@ -43,12 +53,12 @@ function CreateAccount(){
                 <input type="input" className="from-control" id="name"
                 placeholder="Enter name" value={name} onChange={ e => setName(e.currentTarget.value)} /><br/>
                 Email Address<br/>
-                <input type="input" className="from-control" id="emai"
+                <input type="input" className="from-control" id="email"
                 placeholder="Enter email" value={email} onChange={ e => setEmail(e.currentTarget.value)} /><br/>
                 Password<br/>
                 <input type="input" className="from-control" id="password"
-                placeholder="Enter email" value={password} onChange={ e => setPassword(e.currentTarget.value)} /><p/>
-                <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+                placeholder="Enter Password" value={password} onChange={ e => setPassword(e.currentTarget.value)} /><p/>
+                <button type="submit" className="btn btn-light" onClick={validateUser}>Create Account</button>
                 </>
             ) : (
                 <>

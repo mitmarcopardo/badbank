@@ -2,11 +2,15 @@ function Spa(){
     return(
         <>
         <HashRouter>
-            <Navbar/>
+            
             <UserContext.Provider value={
                 {value: false,
-                users:[]}
+                login: false,
+                users:[],
+                cuser: {},
+                }
             }>
+                <Navbar/>
                 <Route path="/" exact component={Home} />
                 <Route path="/caccaount/" component={CreateAccount} />
                 <Route path="/login/" component={Login} />
