@@ -1,9 +1,31 @@
 function AllData(){
     const ctx = React.useContext(UserContext);
+
+
     return(
-        <h1>All Data
-            <br/>
-            {JSON.stringify(ctx)}
-        </h1>
+        <Transactions
+            bgcolor="primary"
+            label = "Data"
+            header = "BadBank Data Page"
+            title = "Account Details"
+            text = "BadBank Account Details"
+            body = { ctx.value ? (
+                (ctx.login ? (
+                <>
+                Name: {ctx.cuser.map( x => x.name)}<br/>
+                Email: {ctx.cuser.map( x => x.email)}<br/>
+                Password: {ctx.cuser.map( x => x.password)}<br/>
+                Balance ${ctx.cuser.map( x => x.balance)}<br/>
+                </>
+                ) : (
+                <>
+                <h2>Log in to get access</h2>
+                </>))
+            ) : (
+                <>
+                <h3>Create an Account to start!</h3>
+                </>
+            ) }
+        />
     );
 }

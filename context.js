@@ -63,3 +63,22 @@ function Transactions(props){
         </div>
     );
 }
+
+function AllData(props){
+    function classes(){
+        const bg = props.bgcolor ? 'bg-' + props.bgcolor : ' ';
+        const txt = props.txtcolor ? 'text-' + props.bgcolor : 'text-white';
+        return 'card mb-3 ' + bg + ' ' + txt + ' mx-auto mt-5';
+    }
+    return(
+        <div className="Container mx-auto">
+            <div className={classes()} style={{maxWidth: "18rem"}}>
+                <div className="card-header">{props.header}</div>
+                <div className="card-body">
+                    {props.title && (<h5 className="card-title">{props.title}</h5>)}
+                    {props.body}
+                </div>
+            </div>
+        </div>
+    );
+}

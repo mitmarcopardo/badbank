@@ -52,7 +52,7 @@ function Deposit(){
                 <p/>Ammount to deposit<br/>
                 $ <input type="input" className="from-control" id="deposit"
                 placeholder="Enter amount" value={amount} onChange={ e => setAmount(parseFloat(e.currentTarget.value))} /><p/>
-                <p/><button type="button" className="btn btn-light" onClick={Update}>Deposit</button>
+                <p/><button type="button" className="btn btn-light btn-block" onClick={Update}>Deposit</button>
                 </>
                 ) : (
                 <>
