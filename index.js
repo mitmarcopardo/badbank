@@ -8,6 +8,7 @@ function Spa(){
                 login: false,
                 users:[],
                 cuser: {},
+                hst: []
                 }
             }>
                 <Navbar/>

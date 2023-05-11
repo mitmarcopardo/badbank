@@ -16,6 +16,7 @@ function Login(){
     function loggedOut(){
         setShowl(false);
         ctx.login = false;
+        ctx.hst = [];
     }
 
     function validateField(field, label){

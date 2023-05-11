@@ -25,6 +25,8 @@ function Withdraw(){
                 ctx.cuser[0].balance = ctx.cuser[0].balance - amount;
                 console.log(ctx.cuser[0].balance)
                 setStatus('Money whitdrawn!');
+                ctx.hst.push(`Whitdraw: -${amount}`);
+                console.log(ctx.hst);
                 setAmount('')
                 setTimeout( () => setStatus(''),2000);
                 return true;

@@ -24,6 +24,8 @@ function Deposit(){
             ctx.cuser[0].balance = ctx.cuser[0].balance + amount;
             console.log(ctx.cuser[0].balance)
             setStatus('Depsit done!');
+            ctx.hst.push(`Deposit: +${amount}`);
+            console.log(ctx.hst);
             setAmount('')
             setTimeout( () => setStatus(''),2000);
             return true;}

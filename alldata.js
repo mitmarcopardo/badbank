@@ -1,6 +1,7 @@
 function AllData(){
     const ctx = React.useContext(UserContext);
 
+    
 
     return(
         <Transactions
@@ -16,6 +17,7 @@ function AllData(){
                 Email: {ctx.cuser.map( x => x.email)}<br/>
                 Password: {ctx.cuser.map( x => x.password)}<br/>
                 Balance ${ctx.cuser.map( x => x.balance)}<br/>
+                Movements: {ctx.hst.map( (x) =><li key={x}>{ x }</li> )}<br/>
                 </>
                 ) : (
                 <>
